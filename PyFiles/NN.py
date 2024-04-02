@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
   print("\n\n"+"*"*20+" - REPORT - "+"*"*20+"\n\n")
 
-  print("***THE DIMENSIONS OF WEIGHT MATRICES***\n")
+  print("*** THE DIMENSIONS OF WEIGHT MATRICES ***\n")
   # Printing shape of weight matrix one
   print("- The dimension of weight matrix one: \n")
   print('\t'+str(NN.weights1.shape)+'\n\n')
