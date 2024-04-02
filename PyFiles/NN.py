@@ -103,14 +103,12 @@ if __name__ == '__main__':
 
 
   # Printing out the matrix for loss over iterations
-  print("*** Graphn Number One: Change in Loss by Iteration ***\n")
   fig, ax = plt.subplots()
   ax.plot(iteration_list, loss_list)
   ax.set(xlabel='Number of Iterations', ylabel='Loss (Mean Sum Squared Loss)',title='Change in Loss by Iteration')
   plt.show()
 
   # Print out the martix for loss over iterations with data that further shows the fine change of loss
-  print("\n\n*** Graphn Number One: Change in Loss by Iteration (Excluding first 100 iterations) ***\n")
   fig, ax = plt.subplots()
   ax.plot(iteration_list[100:], loss_list[100:])
   ax.set(xlabel='Number of Iterations', ylabel='Loss (Mean Sum Squared Loss)',title='Change in Loss by Iteration (Excluding first 100 iterations)')
