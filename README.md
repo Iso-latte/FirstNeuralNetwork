@@ -1,12 +1,18 @@
 # First Neural Network
-## Google colab link: https://colab.research.google.com/drive/1YsDhmFcN9i8C3LBlhAMR4ATqwqoA8avX#scrollTo=1XKwZ0nfSsew
+## Google colab link: 
+- https://colab.research.google.com/drive/1YsDhmFcN9i8C3LBlhAMR4ATqwqoA8avX#scrollTo=1XKwZ0nfSsew
+
+### Python Files
+- NeuralNetwork.py: This file hold the Neural Network class that is used in other files
+- NNExample.py: This file trains and plots the loss of the NN throughout training process (should be first file to be ran)
+- NNTests.py: This file contains tests for the NN
 
 ### Packages used:
 - Numpy and matplotlib
 
 ### Class Neural Network:
 - Contains 6 class attributes
-- Contains 5 class methods
+- Contains 8 class methods
 
 ### Info:
 - Creates a 3-6-2 Neural Network

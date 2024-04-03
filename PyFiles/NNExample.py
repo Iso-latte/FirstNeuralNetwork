@@ -1,66 +1,9 @@
+from NeuralNetwork import NeuralNetwork
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Activation function
-def sigmoid(t):
-  return 1/(1+np.exp(-t))
-
-# Derivative of sigmoid
-def sigmoid_derivative(p):
-  return p * (1 - p)
-
-
-class NeuralNetwork:
-  def __init__(self, x, y):
-    '''
-    :param two arrays a input layer "x" and output layer "y"
-    :type Numpy array
-    '''
-    self.input = x
-    self.y = y
-    self.y = y
-    self.output = np.zeros(y.shape)
-    self.weights1= np.random.rand(self.input.shape[1],6)  # This is so the hidden layer has 6 nodes
-    self.weights2 = np.random.rand(6,2)  # This is so the hidden layer has six nodes in hidden layer and 2 in output
-
-  def feedforward(self):
-    '''
-    :returns the predicted outcome of the data in 2x1 matices
-    '''
-    self.layer1 = sigmoid(np.dot(self.input, self.weights1))
-    self.layer2 = sigmoid(np.dot(self.layer1, self.weights2))
-    return self.layer2
-
-  def backprop(self):
-    '''
-    :function performs backpropagation
-    '''
-    d_weights2 = np.dot(self.layer1.T, 2*(self.y - self.output)*sigmoid_derivative(self.output))
-    d_weights1 = np.dot(self.input.T, np.dot(2*(self.y -self.output)*sigmoid_derivative(self.output),self.weights2.T)*sigmoid_derivative(self.layer1))
-    self.weights1 += d_weights1
-    self.weights2 += d_weights2
-
-  def train(self, X, y):
-    '''
-    :function uses class methods backprop() and feedforward() to train NN
-    '''
-    self.output = self.feedforward()
-    self.backprop()
-
-  def test(self, X):
-    '''
-    :param A singular or collection of 3x1 arrays
-    :type Numpy array
-    :returns predicted output of the arrays 2x1 arrays
-    '''
-    self.layer1 = sigmoid(np.dot(X, self.weights1))
-    self.layer2 = sigmoid(np.dot(self.layer1, self.weights2))
-    return self.layer2
-
-''' NAMESPACE ENTRY POINT FOR THE CODE '''
-
-if __name__ == '__main__':
-
+def NNExample_main():
+  
   # loss list used for plotting loss
   loss_list = []
 
@@ -96,7 +39,7 @@ if __name__ == '__main__':
   print("*** Testing sample X1 [1,1,1]: ***\n")
   # Initializin a new array with data
   X1 = np.array(([1,1,1]), dtype=float)
-  test_pred = NN.test(X1)  # Predicting the value for given array
+  test_pred = NN.predict(X1)  # Predicting the value for given array
   round_pred = np.round(test_pred)  # Rounding the prediction for the test prediction
   print("\t - Predicted Output: "+str(test_pred)+"\n")
   print("\t - Predicted Output (rounded): " + str(round_pred)+"\n\n")
@@ -113,3 +56,8 @@ if __name__ == '__main__':
   ax.plot(iteration_list[100:], loss_list[100:])
   ax.set(xlabel='Number of Iterations', ylabel='Loss (Mean Sum Squared Loss)',title='Change in Loss by Iteration (Excluding first 100 iterations)')
   plt.show()
+
+''' NAMESPACE ENTRY POINT FOR THE CODE '''
+
+if __name__ == '__main__':
+    NNExample_main()
