@@ -19,6 +19,7 @@ class NeuralNetwork:
     self.input = x
     self.y = y
     self.iterations = 0  # This is so you can print out the info on the model
+    self.predict_round = [None, None]
     self.output = np.zeros(y.shape)
     self.weights1= np.random.rand(self.input.shape[1],6)  # This is so the hidden layer has 6 nodes
     self.weights2 = np.random.rand(6,2)  # This is so the hidden layer has six nodes in hidden layer and 2 in output
@@ -55,6 +56,7 @@ class NeuralNetwork:
     '''
     self.layer1 = sigmoid(np.dot(X, self.weights1))
     self.layer2 = sigmoid(np.dot(self.layer1, self.weights2))
+    self.predict_round = np.round(self.layer2)
     return self.layer2
   
   def train_iterations(self, num):
