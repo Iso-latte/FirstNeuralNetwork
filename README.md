@@ -8,7 +8,7 @@
 - NNTests.py: This file contains tests for the NN
 
 ### Packages used:
-- Numpy and matplotlib
+- Numpy, matplotlib, and unittest
 
 ### Class Neural Network:
 - Contains 7 class attributes
