@@ -11,7 +11,7 @@
 - Numpy and matplotlib
 
 ### Class Neural Network:
-- Contains 6 class attributes
+- Contains 7 class attributes
 - Contains 8 class methods
 
 ### Info:
